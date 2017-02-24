@@ -1,0 +1,12 @@
+<input [(ngModel)]="search"/>
+<button (click)="returnData(search)" type="submit">Get Data</button>
+<div *ngIf="data">
+ <ul>
+  <li *ngFor="let post of data">
+   <a [routerLink]="['/profile',post.owner.login]">
+   <img src="{{post.owner.avatar_url}}"/>
+  {{post.description}}
+  </a>
+  </li>
+ </ul>
+</div>
