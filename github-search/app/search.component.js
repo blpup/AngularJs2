@@ -22,6 +22,10 @@ var SearchComponent = (function () {
         var _this = this;
         this.getdata.getHub(s).then(function (res) { return _this.data = res.items; });
     };
+    SearchComponent.prototype.onSubmit = function (e) {
+        e.preventDefault();
+        console.log('sub');
+    };
     return SearchComponent;
 }());
 SearchComponent = __decorate([

@@ -1,9 +1,11 @@
-<input [(ngModel)]="search"/>
+<form novalidate="novalidate" (ngSubmit)="onSubmit($event)">
+<input [(ngModel)]="search" name="search"/>
 <button (click)="returnData(search)" type="submit">Get Data</button>
+</form>
 <div *ngIf="data">
  <ul>
   <li *ngFor="let post of data">
-   <a [routerLink]="['/profile',post.owner.login]">
+   <a href="https://github.com/{{post.owner.login}}" target="_blank">
    <img src="{{post.owner.avatar_url}}"/>
   {{post.description}}
   </a>

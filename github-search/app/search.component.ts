@@ -17,4 +17,8 @@ export class SearchComponent {
     returnData(s:any){
        this.getdata.getHub(s).then(res =>this.data = res.items);
     }
+    onSubmit(e:any){
+      e.preventDefault();
+      console.log('sub')
+    }
 }
